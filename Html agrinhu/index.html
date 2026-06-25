@@ -1,41 +1,13 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AgroFuturo – Agricultura & Sustentabilidade</title>
-  
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  
-  <link rel="stylesheet" href="style.css">
+  <title>Produção Agrícola Brasileira</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-
-  <nav>
-    <div class="logo">🌿 AgroFuturo</div>
-    
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#producao">Produção</a></li>
-      <li><a href="#sustentabilidade">Sustentabilidade</a></li>
-      <li><a href="#desafios">Desafios</a></li>
-      <li><a href="#solucoes">Soluções</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
-    
-    <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </nav>
-
-  <section id="hero">
-    <div class="hero-tag">Na Prática</div>
-    <h1 class="hero-title">O campo que <span>alimenta</span> e preserva o mundo</h1>
-    <p class="hero-sub">Explorando como a agricultura moderna une tecnologia, produtividade e responsabilidade ambiental para construir um futuro sustentável.</p>
-    <a href="#producao" class="hero-btn">Explorar conteúdo</a>
-  </section>
-
   <section id="producao">
     <div class="producao-grid">
       <div>
@@ -65,142 +37,30 @@
         </div>
       </div>
 
-      <div class="img-frame">
-        <img src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449?w=800" alt="Plantação vista de drone">
-      </div>
-    </div>
-  </section>
-
-  <section id="sustentabilidade">
-    <p class="section-label">Seção 2</p>
-    <h2 class="section-title">Sustentabilidade no Campo</h2>
-    <p class="section-intro">Práticas ecológicas que garantem produtividade sem comprometer o equilíbrio dos ecossistemas.</p>
-
-    <div class="cards-grid">
-      <div class="eco-card">
-        <div class="eco-icon">🌱</div>
-        <h3>Práticas Ecológicas</h3>
-        <p>Rotação de culturas, cobertura de solo e integração lavoura-pecuária-floresta reduzem impactos ambientais.</p>
-      </div>
-      <div class="eco-card">
-        <div class="eco-icon">🌍</div>
-        <h3>Conservação do Solo</h3>
-        <p>Plantio direto e compostagem preservam a estrutura e fertilidade do solo, reduzindo erosões e químicos.</p>
-      </div>
-      <div class="eco-card">
-        <div class="eco-icon">☀️</div>
-        <h3>Energias Limpas</h3>
-        <p>Energia solar e biogás reduzem custos operacionais e reduzem drasticamente a pegada de carbono.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="desafios">
-    <p class="section-label">Seção 3</p>
-    <h2 class="section-title">Desafios Ambientais</h2>
-    <p class="section-intro">Problemas urgentes que ameaçam a continuidade do desenvolvimento agrícola.</p>
-
-    <div class="desafios-grid">
-      <div>
-        <div class="desafio-item">
-          <h3>Desmatamento</h3>
-          <p>Expansão agrícola não planejada contribui para perda de biodiversidade e alteração nos ciclos de chuva.</p>
-        </div>
-        <div class="desafio-item">
-          <h3>Uso de Agrotóxicos</h3>
-          <p>Contaminação de solos e lençóis freáticos comprometem a saúde humana e os ecossistemas locais.</p>
-        </div>
-      </div>
-      
-      <div>
-        <div class="desafio-item">
-          <h3>Escassez Hídrica</h3>
-          <p>Irrigação ineficiente e mudanças climáticas aumentam a pressão sobre bacias hidrográficas.</p>
-        </div>
-        <div class="alert-box">
-          ⚠️ <strong>Consequência crítica:</strong> Sem ação imediata, estima-se que até 2050 o Brasil pode perder parte de sua capacidade produtiva.
+      <div class="img-frame zoom-effect">
+        <img src="https://github.com/CapyDev-onigiri/projeto-agrinho/blob/assets/17061069345174715438.jpg?raw=true" alt="Capivara analista monitorando trator autônomo e drones no campo">
+        <div class="img-overlay">
+          <span>Tecnologia de Precisão no Campo 🌾</span>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="solucoes">
-    <div class="solucoes-grid">
-      <div>
-        <p class="section-label">Seção 4</p>
-        <h2 class="section-title">Soluções & Futuro</h2>
-        <p class="section-intro">Inovações que apontam para um modelo agrícola mais eficiente e regenerativo.</p>
-
-        <div class="solucoes-lista">
-          <div class="sol-item">
-            <div class="sol-num">01</div>
-            <div>
-              <h3>Agricultura Regenerativa</h3>
-              <p>Recupera a biodiversidade do solo e aumenta o sequestro de carbono.</p>
-            </div>
-          </div>
-          <div class="sol-item">
-            <div class="sol-num">02</div>
-            <div>
-              <h3>Inteligência Artificial</h3>
-              <p>Modelos preditivos otimizam plantio e colheita, reduzindo desperdícios.</p>
-            </div>
-          </div>
-        </div>
+  <section id="vitrine-agrinho">
+    <p class="section-label">Galeria Agrinho</p>
+    <h2 class="section-title">Equilíbrio em Movimento</h2>
+    <p class="section-intro">Uma visão ilustrada de como a tecnologia de ponta apoia e regenera os ciclos naturais.</p>
+    
+    <div class="vitrine-container">
+      <div class="vitrine-img-box">
+        <img src="https://github.com/CapyDev-onigiri/projeto-agrinho/blob/assets/12350807109052873594.jpg?raw=true" alt="Capivara monitorando ecossistemas e robôs de filtragem na água">
       </div>
-
-      <div class="grafico-container">
-        <h3>Adoção de tecnologias no campo</h3>
-        
-        <div class="barra-label"><span>Drones e sensoriamento</span><span>78%</span></div>
-        <div class="barra-track"><div class="barra-fill" style="width: 78%;"></div></div>
-
-        <div class="barra-label"><span>Energia solar rural</span><span>61%</span></div>
-        <div class="barra-track"><div class="barra-fill" style="width: 61%;"></div></div>
-
-        <div class="barra-label"><span>Agricultura de precisão</span><span>54%</span></div>
-        <div class="barra-track"><div class="barra-fill" style="width: 54%;"></div></div>
+      <div class="vitrine-texto">
+        <h3>Monitoramento Inteligente da Biodiversidade</h3>
+        <p>O monitoramento ambiental automatizado garante que a produção agrícola caminhe de mãos dadas com a preservação de espécies nativas, limpeza de recursos hídricos e controle biológico do solo.</p>
+        <div class="badge-tema">Agro Forte, Futuro Sustentável</div>
       </div>
     </div>
   </section>
-
-  <section id="contato">
-    <p class="section-label">Seção 5</p>
-    <h2 class="section-title">Faça Parte da Mudança</h2>
-
-    <div class="contato-wrap">
-      <div>
-        <p class="msg-final">O futuro da alimentação depende das escolhas que fazemos <strong>hoje</strong>. Participe conosco desta jornada sustentável.</p>
-        <div class="contato-info">
-          <div>📧 contato@agrofuturo.com.br</div>
-          <div>📍 Curitiba, PR – Brasil</div>
-        </div>
-      </div>
-
-      <div class="formulario">
-        <div class="form-group">
-          <label>Nome completo</label>
-          <input type="text" placeholder="Seu nome">
-        </div>
-        <div class="form-group">
-          <label>E-mail</label>
-          <input type="email" placeholder="seu@email.com">
-        </div>
-        <div class="form-group">
-          <label>Mensagem</label>
-          <textarea placeholder="Sua mensagem..."></textarea>
-        </div>
-        <button class="btn-enviar" onclick="enviarForm()">Enviar mensagem 🌿</button>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-logo">🌿 AgroFuturo</div>
-    <div>© 2026 AgroFuturo. Todos os direitos reservados.</div>
-    <div>Feito com 🌱 para o planeta</div>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
