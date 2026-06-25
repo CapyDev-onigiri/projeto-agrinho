@@ -1,509 +1,77 @@
-/* ── PALETA DE CORES DO SITE ── */
-/* Mude as cores aqui para alterar o site inteiro automaticamente */
-:root {
-  --verde-escuro: #1a3a2a;
-  --verde-medio: #2d6a4f;
-  --verde-claro: #74c69d;
-  --terra: #a0522d;
-  --ouro: #d4a017;
-  --creme: #f5f0e8;
-  --branco: #fdfcf9;
-  --texto: #1c1c1c;
-}
+/* ── EFEITOS ADICIONAIS E NOVA VITRINE DA CAPIVARA ── */
 
-/* ── CONFIGURAÇÕES GERAIS ── */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; /* Garante que os paddings não quebrem o tamanho das caixas */
-}
-
-html {
-  scroll-behavior: smooth; /* Faz o efeito de rolar a página suavemente ao clicar no menu */
-}
-
-body {
-  font-family: 'DM Sans', sans-serif;
-  background-color: var(--branco);
-  color: var(--texto);
-}
-
-/* Simplificação: Todos os blocos padrão de seção têm o mesmo espaçamento interno */
-section {
-  padding: 5rem 10%;
-}
-
-/* ── ESTILOS DO MENU DE NAVEGAÇÃO ── */
-nav {
-  position: fixed; /* Fixa o menu no topo da tela enquanto você rola a página */
-  top: 0; left: 0; right: 0;
-  background-color: var(--verde-escuro);
-  display: flex;
-  justify-content: space-between; /* Coloca a logo na esquerda e os links na direita */
-  align-items: center;
-  padding: 1.5rem 10%;
-  z-index: 1000; /* Garante que o menu fique sempre na frente de qualquer elemento */
-}
-
-.logo {
-  font-family: 'Playfair Display', serif;
-  color: var(--verde-claro);
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.nav-links {
-  display: flex;
-  gap: 2rem; /* Espaço entre cada link do menu */
-  list-style: none; /* Remove os pontinhos da lista <ul> */
-}
-
-.nav-links a {
-  color: var(--creme);
-  text-decoration: none; /* Remove o sublinhado padrão de links */
-  font-size: 0.9rem;
-  font-weight: 500;
-  text-transform: uppercase; /* Deixa o texto em caixa alta */
-}
-
-.nav-links a:hover {
-  color: var(--verde-claro); /* Cor que aparece quando passa o mouse por cima */
-}
-
-/* Menu Hambúrguer (Escondido por padrão no computador) */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
+/* Efeito de Zoom suave nas imagens do frame ao passar o mouse */
+.zoom-effect {
   cursor: pointer;
 }
-
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background-color: var(--creme);
-  border-radius: 2px;
+.zoom-effect img {
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.zoom-effect:hover img {
+  transform: scale(1.06);
 }
 
-/* ── ESTILOS DA SEÇÃO HERO (Abertura) ── */
-#hero {
-  height: 100vh; /* Ocupa 100% da altura da tela do usuário */
-  background-color: var(--verde-escuro);
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Centraliza o conteúdo verticalmente */
-  align-items: flex-start; /* Alinha o conteúdo à esquerda */
-  padding-top: 100px; /* Evita que o menu fixo cubra o texto */
+/* Nova seção Vitrine Agrinho */
+#vitrine-agrinho {
+  background-color: var(--branco);
 }
 
-.hero-tag {
-  color: var(--verde-claro);
-  border: 1px solid var(--verde-claro);
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  margin-bottom: 1.5rem;
-}
-
-.hero-title {
-  font-family: 'Playfair Display', serif;
-  color: var(--branco);
-  font-size: 3.5rem;
-  max-width: 700px;
-  line-height: 1.2;
-}
-
-.hero-title span {
-  color: var(--verde-claro); /* Destaca a palavra 'alimenta' em verde */
-}
-
-.hero-sub {
-  color: var(--creme);
-  margin-top: 1.5rem;
-  max-width: 500px;
-  font-size: 1.1rem;
-  opacity: 0.8; /* Deixa o texto levemente transparente */
-}
-
-.hero-btn {
-  margin-top: 2rem;
-  background-color: var(--verde-claro);
-  color: var(--verde-escuro);
-  padding: 0.8rem 2rem;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.hero-btn:hover {
-  background-color: var(--branco); /* Muda de cor ao passar o mouse */
-}
-
-/* ── PADRONIZAÇÃO DE TÍTULOS DE SEÇÃO ── */
-.section-label {
-  color: var(--verde-medio);
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
-}
-
-.section-title {
-  font-family: 'Playfair Display', serif;
-  color: var(--verde-escuro);
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-}
-
-.section-intro {
-  font-size: 1.1rem;
-  color: #555;
-  margin-bottom: 2rem;
-}
-
-/* ── SEÇÃO 1: PRODUÇÃO AGRÍCOLA ── */
-#producao {
-  background-color: var(--creme);
-}
-
-/* Organiza os textos em um lado e a imagem no outro */
-.producao-grid {
+.vitrine-container {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Divide em 2 colunas iguais */
+  grid-template-columns: 1.2fr 0.8fr; /* Imagem um pouco maior que o bloco de texto */
   gap: 4rem;
   align-items: center;
 }
 
-.stats-row {
-  display: flex;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.stat-card {
-  background-color: var(--verde-escuro);
-  color: var(--branco);
-  padding: 1.5rem;
-  border-radius: 10px;
-  flex: 1; /* Faz os dois cards terem o mesmo tamanho horizontal */
-}
-
-.stat-num {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  color: var(--verde-claro);
-  font-weight: bold;
-}
-
-.stat-label {
-  font-size: 0.85rem;
-  opacity: 0.7;
-}
-
-.producao-texto-extra {
-  color: #444;
-  margin-bottom: 1.5rem;
-}
-
-.tech-tags {
-  display: flex;
-  flex-wrap: wrap; /* Se não couber na linha, pula para a linha de baixo */
-  gap: 0.5rem;
-}
-
-.tag {
-  background-color: var(--verde-medio);
-  color: var(--branco);
-  padding: 0.4rem 0.8rem;
+.vitrine-img-box {
   border-radius: 15px;
-  font-size: 0.8rem;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(26, 58, 42, 0.15);
+  height: 450px;
 }
 
-/* Moldura da Imagem */
-.img-frame {
-  position: relative;
-  border-radius: 15px;
-  overflow: hidden; /* Corta a imagem se ela passar das bordas arredondadas */
-  height: 400px;
-}
-
-.img-frame img {
+.vitrine-img-box img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
+  object-fit: cover;
+  transition: transform 0.5s ease;
 }
 
-.img-overlay {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  background: linear-gradient(transparent, rgba(0,0,0,0.8)); /* Sombra escura no fundo do texto */
-  padding: 1.5rem;
-  color: var(--branco);
+.vitrine-img-box:hover img {
+  transform: scale(1.04);
 }
 
-/* ── SEÇÃO 2: SUSTENTABILIDADE (Cards em Grade) ── */
-#sustentabilidade {
-  background-color: var(--verde-escuro);
-}
-
-/* Altera as cores dos títulos nesta seção para contrastar com o fundo escuro */
-#sustentabilidade .section-title { color: var(--branco); }
-#sustentabilidade .section-label { color: var(--verde-claro); }
-#sustentabilidade .section-intro { color: var(--creme); }
-
-.cards-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Cria 3 colunas iguais */
-  gap: 2rem;
-}
-
-.eco-card {
-  background-color: rgba(255, 255, 255, 0.05); /* Fundo branco bem transparente */
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 2rem;
-  border-radius: 15px;
-}
-
-.eco-icon {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.eco-card h3 {
-  color: var(--verde-claro);
-  margin-bottom: 0.5rem;
-}
-
-.eco-card p {
-  color: var(--creme);
-  font-size: 0.9rem;
-  opacity: 0.8;
-}
-
-/* ── SEÇÃO 3: DESAFIOS ── */
-.desafios-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-}
-
-.desafio-item {
-  border-left: 4px solid var(--terra); /* Linha vertical cor de terra no lado esquerdo */
-  padding-left: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.desafio-item h3 {
-  color: var(--terra);
-  margin-bottom: 0.5rem;
-}
-
-.alert-box {
-  background-color: #fff3cd; /* Fundo amarelo de aviso */
-  border-left: 4px solid var(--ouro);
-  padding: 1.5rem;
-  border-radius: 5px;
-  color: #664d03;
-}
-
-/* ── SEÇÃO 4: SOLUÇÕES E GRÁFICO ── */
-#solucoes {
-  background-color: var(--creme);
-}
-
-.solucoes-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-}
-
-.solucoes-lista {
-  margin-top: 1.5rem;
-}
-
-.sol-item {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.sol-num {
+.vitrine-texto h3 {
   font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  font-weight: bold;
-  color: var(--verde-medio);
-}
-
-/* Estilo das Barras do Gráfico */
-.grafico-container {
-  background-color: var(--branco);
-  padding: 2rem;
-  border-radius: 15px;
-}
-
-.grafico-container h3 {
-  margin-bottom: 1.5rem;
   color: var(--verde-escuro);
-}
-
-.barra-label {
-  display: flex;
-  justify-content: space-between; /* Joga o nome para a esquerda e o % para a direita */
-  font-size: 0.85rem;
-  margin-top: 1rem;
-  margin-bottom: 0.3rem;
-}
-
-.barra-track {
-  background-color: #e0e0e0; /* Fundo cinza da barra (vazia) */
-  height: 10px;
-  border-radius: 5px;
-}
-
-.barra-fill {
-  background-color: var(--verde-medio); /* Cor do preenchimento da barra */
-  height: 10px;
-  border-radius: 5px;
-}
-
-/* ── SEÇÃO 5: CONTATO ── */
-#contato {
-  background-color: var(--verde-escuro);
-  color: var(--branco);
-}
-
-#contato .section-title { color: var(--branco); }
-
-.contato-wrap {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-}
-
-.msg-final {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-.msg-final strong {
-  color: var(--verde-claro);
-}
-
-.contato-info {
-  margin-top: 2rem;
-}
-
-.contato-info div {
-  margin-bottom: 0.5rem;
-  opacity: 0.8;
-}
-
-/* Campos do formulário */
-.formulario {
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 2rem;
-  border-radius: 15px;
-}
-
-.form-group {
+  font-size: 1.8rem;
   margin-bottom: 1rem;
 }
 
-.form-group label {
-  display: block;
-  font-size: 0.8rem;
-  margin-bottom: 0.3rem;
-  text-transform: uppercase;
-  color: var(--verde-claro);
+.vitrine-texto p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
-.form-group input, 
-.form-group textarea {
-  width: 100%;
-  padding: 0.75rem;
-  background-color: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 5px;
-  color: var(--branco);
-  font-family: inherit;
-}
-
-.form-group textarea {
-  height: 100px;
-  resize: vertical; /* Permite o usuário aumentar o campo apenas para baixo */
-}
-
-.btn-enviar {
-  width: 100%;
-  padding: 0.75rem;
-  background-color: var(--verde-claro);
-  color: var(--verde-escuro);
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.btn-enviar:hover {
-  background-color: var(--branco);
-}
-
-/* ── RODAPÉ (FOOTER) ── */
-footer {
-  background-color: #0d1f16;
-  color: rgba(255, 255, 255, 0.5);
-  padding: 2rem 10%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+.badge-tema {
+  display: inline-block;
+  background-color: #e8f5e9;
+  color: var(--verde-medio);
+  padding: 0.5rem 1rem;
+  border-radius: 30px;
   font-size: 0.85rem;
-}
-
-.footer-logo {
-  color: var(--verde-claro);
   font-weight: bold;
+  border: 1px solid var(--verde-claro);
 }
 
-/* ── RESPONSIVIDADE (Telas de Celular) ── */
-/* Quando a tela for menor que 768px, tudo vira uma coluna só */
+/* Garante que a nova seção quebre em uma coluna em telas de celulares */
 @media (max-width: 768px) {
-  section { padding: 3rem 5%; }
-  
-  /* Transforma os Grids de 2 ou 3 colunas em apenas 1 coluna */
-  .producao-grid, .cards-grid, .desafios-grid, .solucoes-grid, .contato-wrap {
+  .vitrine-container {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
-  
-  .stats-row {
-    flex-direction: column; /* Cards de números ficam um embaixo do outro no celular */
-  }
-
-  footer {
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-  }
-
-  /* Ativa o botão do menu hambúrguer no mobile */
-  .hamburger {
-    display: flex;
-  }
-
-  /* Esconde o menu original para ser aberto via JS */
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 100%; left: 0; right: 0;
-    background-color: var(--verde-escuro);
-    padding: 2rem;
-    gap: 1.5rem;
-  }
-
-  /* Classe que o JavaScript vai adicionar para abrir o menu */
-  .nav-links.active {
-    display: flex;
+  .vitrine-img-box {
+    height: 300px;
   }
 }
