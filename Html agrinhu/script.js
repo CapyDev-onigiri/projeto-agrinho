@@ -1,23 +1,31 @@
 // ANIMAÇÃO DE REVELAÇÃO (FADE-IN) PARA AS FOTOS DA CAPIVARA
-const imagensCapivara = document.querySelectorAll('.img-frame, .vitrine-img-box');
+document.addEventListener('DOMContentLoaded', () => {
+  const imagensCapivara = document.querySelectorAll('.img-frame, .vitrine-img-box');
 
-const imgObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.style.opacity = "1";
-      entry.target.style.transform = "translateY(0)";
-      imgObserver.unobserve(entry.target); // Ativa a animação apenas uma vez
-    }
+  if (!('IntersectionObserver' in window)) {
+    imagensCapivara.forEach(img => {
+      img.style.opacity = "1";
+      img.style.transform = "translateY(0)";
+    });
+    return;
+  }
+
+  const imgObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "translateY(0)";
+        imgObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15
   });
-}, {
-  threshold: 0.15 // Ativa quando 15% da imagem surgir na tela
-});
 
-imagensCapivara.forEach(img => {
-  // Configura o estado inicial invisível e deslocado para baixo
-  img.style.opacity = "0";
-  img.style.transform = "translateY(30px)";
-  img.style.transition = "opacity 1s ease-out, transform 1s ease-out";
-  
-  imgObserver.observe(img);
+  imagensCapivara.forEach(img => {
+    img.style.opacity = "0";
+    img.style.transform = "translateY(30px)";
+    img.style.transition = "opacity 1s ease-out, transform 1s ease-out";
+    imgObserver.observe(img);
+  });
 });
